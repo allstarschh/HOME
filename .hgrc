@@ -1,0 +1,23 @@
+[ui]
+username = Yoshi Huang <allstars.chh@mozilla.com>
+editor=vi
+
+[defaults]
+diff = -pU8
+qdiff = -pU8
+qnew = -UDe
+qseries = -sv
+
+[extensions]
+color = 
+hgext.graphlog =
+hgext.mq =
+hgext.record =
+hgext.rebase =
+trychooser = /home/allstars/src/github/trychooser/trychooser
+churn =
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8 
