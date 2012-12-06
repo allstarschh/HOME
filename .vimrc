@@ -12,6 +12,7 @@ set nowrap
 set incsearch
 set formatoptions+=r
 set cc=80
+set list
 au FileType make set noexpandtab
 au BufNewFile,BufRead *.jsm    setf javascript
 "au FileType python set noexpandtab  
