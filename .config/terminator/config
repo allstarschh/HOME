@@ -1,0 +1,5 @@
+[profiles]
+ [[default]]
+   foreground_color = '#FFFFFF'
+   scrollback_lines = '5000'
+
