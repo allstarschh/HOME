@@ -15,6 +15,7 @@ set cc=80
 set list
 au FileType make set noexpandtab
 au BufNewFile,BufRead *.jsm    setf javascript
+au BufNewFile,BufRead *.aidl   setf java
 "au FileType python set noexpandtab  
 colorscheme koehler
 runtime ftplugin/man.vim
