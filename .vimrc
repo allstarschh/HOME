@@ -16,6 +16,10 @@ set list
 au FileType make set noexpandtab
 au BufNewFile,BufRead *.jsm    setf javascript
 au BufNewFile,BufRead *.aidl   setf java
+"augroup filetypedetect
+au BufNewFile,BufRead *.webidl setf widl
+au BufNewFile,BufRead *.widl   setf widl
+"augroup END 
 "au FileType python set noexpandtab  
 colorscheme koehler
 runtime ftplugin/man.vim
