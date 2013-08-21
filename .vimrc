@@ -16,13 +16,14 @@ set list
 au FileType make set noexpandtab
 au BufNewFile,BufRead *.jsm    setf javascript
 au BufNewFile,BufRead *.aidl   setf java
-"augroup filetypedetect
+augroup filetypedetect
 au BufNewFile,BufRead *.webidl setf widl
 au BufNewFile,BufRead *.widl   setf widl
-"augroup END 
+augroup END 
 "au FileType python set noexpandtab  
 colorscheme koehler
 runtime ftplugin/man.vim
 au BufNewFile,BufRead /home/allstars/test/proj2/*        setl ts=8 sts=8 sw=8 
 set exrc
 set modeline
+match ErrorMsg '\s\+$'
