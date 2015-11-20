@@ -1,0 +1,11 @@
+[color]
+	ui = true
+[user]
+	name = Yoshi Huang
+	email = allstars.chh@mozilla.com
+[core]
+  pager = less
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
