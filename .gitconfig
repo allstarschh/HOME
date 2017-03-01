@@ -5,6 +5,7 @@
 	email = allstars.chh@mozilla.com
 [core]
   pager = less
+  editor = vim
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
