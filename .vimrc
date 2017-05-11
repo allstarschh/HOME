@@ -13,6 +13,7 @@ set incsearch
 set formatoptions+=r
 set cc=80
 set list
+set cursorline
 au FileType make set noexpandtab
 au BufNewFile,BufRead *.jsm    setf javascript
 au BufNewFile,BufRead *.aidl   setf java
@@ -31,4 +32,10 @@ syntax on
 let c_space_errors=1
 highlight RedundantSpaces ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/
+
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 
