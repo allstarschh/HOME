@@ -1,7 +1,7 @@
 [color]
 	ui = true
 [user]
-	name = Yoshi Huang
+	name = Yoshi Cheng-Hao Huang
 	email = allstars.chh@gmail.com
 [core]
   pager = less
@@ -12,3 +12,5 @@
   diff = diff-highlight | less
 [diff]
 	context = 8
+[cinnabar]
+	helper = /home/allstars/src/git-cinnabar/git-cinnabar-helper
