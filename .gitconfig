@@ -14,3 +14,21 @@
 	context = 8
 [cinnabar]
 	helper = /home/allstars/src/git-cinnabar/git-cinnabar-helper
+[alias]
+	cp = cherry-pick
+	comit = commit
+	dc = diff --cached
+	ci = commit
+	br = branch
+	co = checkout
+	st = status
+	cia = commit --amend
+	d = diff
+	au = add -u
+	lg = log
+	ri = rebase -i
+	cb = checkout -b
+	so = show
+	ss = show --stat
+	puc = pull central branches/default/tip
+	pui = pull inbound branches/default/tip
