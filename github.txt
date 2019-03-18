@@ -4,3 +4,4 @@ git@github.com:v8/v8.git
 https://android.googlesource.com/platform/art
 git@github.com:servo/mozjs.git
 git@github.com:mozilla/rr.git
+git@github.com:boostorg/boost.git
