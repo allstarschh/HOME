@@ -1,6 +1,6 @@
 sudo add-apt-repository ppa:gnome-terminator  ppa:ubuntu-mozilla-daily/ppa
 sudo apt-get update
-sudo apt-get install terminator git vim vim-scripts firefox-trunk gnome-shell-extensions chrome-gnome-shell  xchat icecc icecc-monitor gitk clang ccache curl
+sudo apt-get install terminator git vim vim-scripts firefox-trunk gnome-shell-extensions chrome-gnome-shell  xchat icecc icecc-monitor gitk clang ccache curl ripgrep
 
 # build tool fore Firefox
 wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py
