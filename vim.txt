@@ -1,1 +1,2 @@
 git://github.com/godlygeek/tabular.git
+git://github.com/mkitt/tabline.vim.git
