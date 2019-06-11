@@ -20,6 +20,7 @@
 	dc = diff --cached
 	ci = commit
 	br = branch
+	bl = blame
 	co = checkout
 	st = status
 	cia = commit --amend
