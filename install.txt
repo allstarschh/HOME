@@ -13,6 +13,17 @@ sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl ripgr
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
 
+# for element, https://element.io/get-started
+sudo apt install -y wget apt-transport-https
+
+sudo wget -O /usr/share/keyrings/riot-im-archive-keyring.gpg https://packages.riot.im/debian/riot-im-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/riot-im-archive-keyring.gpg] https://packages.riot.im/debian/ default main" | sudo tee /etc/apt/sources.list.d/riot-im.list
+
+sudo apt update
+
+sudo apt install element-desktop
+
 # for rr
 sudo apt-get install ccache cmake make g++-multilib gdb \
   pkg-config coreutils python3-pexpect manpages-dev git \
