@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get install firefox-trunk gnome-shell-extensions chrome-gnome-shell xchat
 
 # for dev
-sudo apt-get install terminator git vim vim-scripts icecc icecc-monitor gitk clang ccache curl ripgrep php php-curl
+sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl ripgrep php php-curl
 
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
