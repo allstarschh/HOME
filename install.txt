@@ -2,7 +2,10 @@ sudo add-apt-repository ppa:gnome-terminator  ppa:ubuntu-mozilla-daily/ppa
 sudo apt-get update
 
 # apps
-sudo apt-get install firefox-trunk gnome-shell-extensions chrome-gnome-shell xchat
+sudo apt-get install firefox-trunk
+
+# gnome extension
+sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 
 # for dev
 sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl ripgrep php php-curl
