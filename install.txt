@@ -11,12 +11,12 @@ sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl php php-curl
 
 # for rust util
-sudo apt install fd-find ripgrep 
+sudo apt install fd-find ripgrep
 
 # git-delta, see https://github.com/dandavison/delta/releases
 # hyperfine see https://lib.rs/crates/hyperfine
 
-cargo install du-dust gitui exa ytop bottom procs
+cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool
 
 # python utils
 pip3 install --user git-revise

@@ -35,3 +35,5 @@
 	pui = pull inbound branches/default/tip
 	rc = rebase --continue
 	rv = revise -i
+[sequence]
+	editor = interactive-rebase-tool
