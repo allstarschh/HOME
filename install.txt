@@ -18,6 +18,9 @@ sudo apt install fd-find ripgrep
 
 cargo install du-dust gitui exa ytop bottom procs
 
+# python utils
+pip3 install --user git-revise
+
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
 

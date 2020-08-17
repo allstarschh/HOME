@@ -34,3 +34,4 @@
 	puc = pull central branches/default/tip
 	pui = pull inbound branches/default/tip
 	rc = rebase --continue
+	rv = revise -i
