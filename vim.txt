@@ -1,2 +1,4 @@
-git://github.com/godlygeek/tabular.git
-git://github.com/mkitt/tabline.vim.git
+mkdir -p ~/.vim/bundle
+cd ~/.vim/bundle
+git clone git://github.com/godlygeek/tabular.git
+git clone git://github.com/mkitt/tabline.vim.git
