@@ -8,7 +8,7 @@ sudo apt-get install firefox-trunk
 sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 
 # for dev
-sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl php php-curl
+sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl php php-curl valgrind
 
 # for rust util
 sudo apt install fd-find ripgrep
@@ -20,6 +20,9 @@ cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool
 
 # python utils
 pip3 install --user git-revise
+
+# java
+sudo apt install openjdk-11-jdk 
 
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
