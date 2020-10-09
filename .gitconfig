@@ -1,19 +1,27 @@
 [color]
-	ui = true
+	ui = auto
 [user]
 	name = Yoshi Cheng-Hao Huang
 	email = allstars.chh@gmail.com
 [core]
-  pager = less
-  editor = vim
-[pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-  diff = diff-highlight | less
+    pager = delta
+    editor = vim
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
 [diff]
 	context = 8
+	wsErrorHighlight = all
 [cinnabar]
 	helper = /home/allstars/src/git-cinnabar/git-cinnabar-helper
+	version-check = 1602160078
 [alias]
 	cp = cherry-pick
 	comit = commit
@@ -31,9 +39,13 @@
 	cb = checkout -b
 	so = show
 	ss = show --stat
-	puc = pull central branches/default/tip
-	pui = pull inbound branches/default/tip
+	fo = fetch origin bookmarks/central:central
+	po = pull origin bookmarks/central
 	rc = rebase --continue
 	rv = revise -i
+[cola]
+	spellcheck = false
 [sequence]
 	editor = interactive-rebase-tool
+[color "diff"]
+	whitespace = red reverse
