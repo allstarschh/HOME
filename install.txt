@@ -1,4 +1,4 @@
-sudo add-apt-repository ppa:gnome-terminator  ppa:ubuntu-mozilla-daily/ppa
+sudo add-apt-repository ppa:mattrose/terminator
 sudo apt-get update
 
 # apps
