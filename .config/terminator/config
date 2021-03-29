@@ -1,5 +1,17 @@
+[global_config]
+[keybindings]
+  next_tab = <Shift>Right
+  prev_tab = <Shift>Left
 [profiles]
- [[default]]
-   foreground_color = '#FFFFFF'
-   scrollback_lines = '5000'
-
+  [[default]]
+    foreground_color = "#FFFFFF"
+    scrollback_lines = 5000
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
