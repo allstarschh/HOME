@@ -42,3 +42,12 @@ augroup CursorLineOnlyInActiveWindow
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+"map Ctrl+j/k, t+j/k to prev/next tab.
+nnoremap <C-k>  :tabnext<CR>
+nnoremap <C-j>  :tabprev<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+
+nnoremap tt  :tabedit<Space>
+nnoremap tm  :tabm<Space>
+
