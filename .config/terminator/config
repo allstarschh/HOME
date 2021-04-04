@@ -1,10 +1,18 @@
 [global_config]
 [keybindings]
-  next_tab = <Shift>Right
-  prev_tab = <Shift>Left
+  go_up = <Alt>K
+  go_down = <Alt>J
+  go_left = <Alt>H
+  go_right = <Alt>L
+  move_tab_right = <Ctrl><Shift>L
+  move_tab_left = <Ctrl><Shift>H
+  next_tab = <Ctrl><Shift>K
+  prev_tab = <Ctrl><Shift>J
+  layout_launcher = <Alt>y
 [profiles]
   [[default]]
-    foreground_color = "#FFFFFF"
+    cursor_color = "#FFFFFF"
+    foreground_color = "#ffffff"
     scrollback_lines = 5000
 [layouts]
   [[default]]
