@@ -47,6 +47,7 @@ nnoremap <C-k>  :tabnext<CR>
 nnoremap <C-j>  :tabprev<CR>
 nnoremap tk  :tabnext<CR>
 nnoremap tj  :tabprev<CR>
+nnoremap gr  :tabprev<CR>
 
 nnoremap tt  :tabedit<Space>
 nnoremap tm  :tabm<Space>
