@@ -12,6 +12,18 @@ sudo apt-get install firefox-trunk
 # for dev
 sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo python3-pip
 
+# git cinnabar
+cd ~/src/
+git clone git@github.com:glandium/git-cinnabar.git
+## add git-cinnabar into PATH
+git cinnabar download
+
+# gecko-dev
+# https://github.com/glandium/git-cinnabar/wiki/Mozilla:-A-git-workflow-for-Gecko-development
+git clone hg::https://hg.mozilla.org/mozilla-unified gecko && cd gecko
+git config fetch.prune true
+./mach bootstrap
+
 # for rust util
 sudo apt install fd-find ripgrep
 
@@ -48,5 +60,3 @@ sudo apt-get install ccache cmake make g++-multilib gdb \
   pkg-config coreutils python3-pexpect manpages-dev git \
   ninja-build capnproto libcapnp-dev
 
-# build tool fore Firefox
-wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py
