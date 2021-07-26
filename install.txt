@@ -4,6 +4,8 @@ sudo apt-get update
 sudo apt-get install terminator
 
 # apps
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo apt-get update
 sudo apt-get install firefox-trunk
 
 # gnome extension
