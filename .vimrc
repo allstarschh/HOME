@@ -42,6 +42,10 @@ augroup CursorLineOnlyInActiveWindow
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+"lightline.vim https://github.com/itchyny/lightline.vim#introduction
+set laststatus=2
+set noshowmode
+
 "map Ctrl+j/k, t+j/k to prev/next tab.
 nnoremap <C-k>  :tabnext<CR>
 nnoremap <C-j>  :tabprev<CR>
