@@ -42,6 +42,7 @@ sudo apt install openjdk-11-jdk
 
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
+fcitx-configtool
 
 # for element, https://element.io/get-started
 sudo apt install -y wget apt-transport-https
