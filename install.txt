@@ -10,7 +10,7 @@ sudo apt-get install firefox-trunk
 #sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 
 # for dev
-sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind
+sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo
 
 # for rust util
 sudo apt install fd-find ripgrep
