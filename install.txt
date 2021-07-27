@@ -1,14 +1,30 @@
+# terminator
 sudo add-apt-repository ppa:mattrose/terminator
 sudo apt-get update
+sudo apt-get install terminator
 
 # apps
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo apt-get update
 sudo apt-get install firefox-trunk
 
 # gnome extension
-sudo apt-get install gnome-shell-extensions chrome-gnome-shell
+#sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 
 # for dev
-sudo apt-get install terminator git vim vim-scripts gitk clang ccache curl php php-curl valgrind
+sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo python3-pip
+
+# git cinnabar
+cd ~/src/
+git clone git@github.com:glandium/git-cinnabar.git
+## add git-cinnabar into PATH
+git cinnabar download
+
+# gecko-dev
+# https://github.com/glandium/git-cinnabar/wiki/Mozilla:-A-git-workflow-for-Gecko-development
+git clone hg::https://hg.mozilla.org/mozilla-unified gecko && cd gecko
+git config fetch.prune true
+./mach bootstrap
 
 # for rust util
 sudo apt install fd-find ripgrep
@@ -26,6 +42,7 @@ sudo apt install openjdk-11-jdk
 
 # for fcitx
 sudo apt-get install fcitx fcitx-table-boshiamy fcitx-chewing fcitx-mozc
+fcitx-configtool
 
 # for element, https://element.io/get-started
 sudo apt install -y wget apt-transport-https
@@ -46,5 +63,3 @@ sudo apt-get install ccache cmake make g++-multilib gdb \
   pkg-config coreutils python3-pexpect manpages-dev git \
   ninja-build capnproto libcapnp-dev
 
-# build tool fore Firefox
-wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py
