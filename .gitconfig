@@ -41,7 +41,8 @@
 	ss = show --stat
 	fo = fetch origin bookmarks/central:central
 	po = pull origin bookmarks/central
-	rc = rebase --continue
+	rcnt = rebase --continue
+	rcen = rebase central
 	rv = revise -i
 [cola]
 	spellcheck = false
