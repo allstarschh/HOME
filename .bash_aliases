@@ -1,8 +1,12 @@
 alias fd=fdfind
+
+# mach cmds
 alias mb="./mach build"
 alias mt="./mach try fuzzy"
 alias mc="./mach clang-format"
 alias mr="./mach run"
+alias mg="./mach gtest"
+alias mx="./mach xpcshell-test"
 
 alias gd="git d"
 alias gau="git au"
