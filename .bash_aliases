@@ -4,6 +4,7 @@ alias fd=fdfind
 alias mb="./mach build"
 alias mt="./mach try fuzzy"
 alias mc="./mach clang-format"
+alias mch="./mach clang-format -c HEAD"
 alias mr="./mach run"
 alias mg="./mach gtest"
 alias mx="./mach xpcshell-test"
