@@ -24,7 +24,7 @@
 	version-check = 1602160078
 [alias]
 	cp = cherry-pick
-	comit = commit
+	cpcnt = cherry-pick --continue
 	dc = diff --cached
 	ci = commit
 	br = branch
