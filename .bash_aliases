@@ -14,6 +14,8 @@ alias mm="./mach mochitest"
 alias mmh="./mach mochitest --headless"
 alias mji="./mach jit-test"
 alias mjs="./mach jstests"
+alias mw="./mach wpt"
+alias mwh="./mach wpt --headless"
 
 alias gd="git d"
 alias gau="git au"
