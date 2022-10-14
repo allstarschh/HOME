@@ -49,6 +49,8 @@ set noshowmode
 "map Ctrl+j/k, t+j/k to prev/next tab.
 nnoremap <C-k>  :tabnext<CR>
 nnoremap <C-j>  :tabprev<CR>
+inoremap <C-k>  <C-o>:tabnext<CR>
+inoremap <C-j>  <C-o>:tabprev<CR>
 nnoremap tk  :tabnext<CR>
 nnoremap tj  :tabprev<CR>
 nnoremap gr  :tabprev<CR>
