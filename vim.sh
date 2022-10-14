@@ -7,6 +7,7 @@ git clone https://github.com/itchyny/lightline.vim
 git clone git://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/easymotion/vim-easymotion
 git clone https://github.com/bronson/vim-trailing-whitespace
+git clone https://github.com/preservim/nerdcommenter.git
 
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
