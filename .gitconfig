@@ -34,6 +34,7 @@
 	cia = commit --amend
 	d = diff
 	au = add -u
+	ap = add -p
 	lg = log
 	ri = rebase -i
 	cb = checkout -b
