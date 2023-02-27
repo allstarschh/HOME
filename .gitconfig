@@ -45,6 +45,7 @@
 	rcnt = rebase --continue
 	rcen = rebase central
 	rv = revise -i
+	cut = revise -c
 [cola]
 	spellcheck = false
 [sequence]
