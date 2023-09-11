@@ -1,15 +1,10 @@
 # terminator
-sudo add-apt-repository ppa:mattrose/terminator
-sudo apt-get update
 sudo apt-get install terminator
 
 # apps
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 sudo apt-get update
 sudo apt-get install firefox-trunk
-
-# gnome extension
-#sudo apt-get install gnome-shell-extensions chrome-gnome-shell
 
 # for dev
 sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo python3-pip
