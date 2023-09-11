@@ -9,11 +9,12 @@
   next_tab = <Ctrl><Shift>K
   prev_tab = <Ctrl><Shift>J
   layout_launcher = <Alt>y
+  preferences_keybindings = <Primary><Shift>y
 [profiles]
   [[default]]
     cursor_color = "#FFFFFF"
     foreground_color = "#ffffff"
-    scrollback_lines = 5000
+    scrollback_lines = 100000
 [layouts]
   [[default]]
     [[[window0]]]
