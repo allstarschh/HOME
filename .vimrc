@@ -58,3 +58,12 @@ nnoremap gr  :tabprev<CR>
 nnoremap tt  :tabedit<Space>
 nnoremap tm  :tabm<Space>
 
+" Vim plug
+" https://github.com/junegunn/vim-plug#example
+call plug#begin()
+
+" https://github.com/LunarWatcher/auto-pairs#installation
+Plug 'LunarWatcher/auto-pairs'
+
+call plug#end()
+" end of Vim plug
