@@ -52,6 +52,8 @@ sudo apt install element-desktop
 
 # git repos
 git clone git@github.com:mystor/phlay.git
+cd ~/bin
+ln -s ~/src/phlay/phlay phlay
 
 # for rr
 sudo apt-get install ccache cmake make g++-multilib gdb \
