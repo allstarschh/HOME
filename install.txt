@@ -24,10 +24,9 @@ git config fetch.prune true
 # for rust util
 sudo apt install fd-find ripgrep
 
-# git-delta, see https://github.com/dandavison/delta/releases
 # hyperfine see https://lib.rs/crates/hyperfine
 
-cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool
+cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool git-delta
 
 # python utils
 pip3 install --user git-revise
