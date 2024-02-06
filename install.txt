@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install firefox-trunk
 
 # for dev
-sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo python3-pip
+sudo apt-get install git mercurial vim vim-scripts gitk clang ccache curl php php-curl valgrind cargo python3-pip git-revise
 
 # git cinnabar
 cd ~/src/
@@ -29,7 +29,7 @@ sudo apt install fd-find ripgrep
 cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool git-delta
 
 # python utils
-pip3 install --user git-revise
+#pip3 install --user git-revise
 
 # java
 sudo apt install openjdk-11-jdk 
