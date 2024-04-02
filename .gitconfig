@@ -46,6 +46,7 @@
 	rcen = rebase central
 	rv = revise -i
 	cut = revise -c
+    amcnt = am --continue
 [cola]
 	spellcheck = false
 [sequence]
