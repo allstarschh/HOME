@@ -18,6 +18,7 @@ alias mjs="./mach jstests"
 alias mja="./mach jsapi-tests"
 alias mw="./mach wpt"
 alias mwh="./mach wpt --headless"
+alias mrh="./mach reftest --headless"
 
 alias gd="git d"
 alias gau="git au"
