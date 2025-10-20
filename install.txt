@@ -60,3 +60,6 @@ sudo apt-get install ccache cmake make g++-multilib gdb \
   pkg-config coreutils python3-pexpect manpages-dev git \
   ninja-build capnproto libcapnp-dev
 
+# atuin
+# https://docs.atuin.sh/guide/installation/#recommended-installation-approach
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
