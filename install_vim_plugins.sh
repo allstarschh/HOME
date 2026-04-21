@@ -5,6 +5,9 @@ set -euo pipefail
 
 STEP() { echo; echo "==> $*"; }
 
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 PLUGINS=(
   https://github.com/itchyny/lightline.vim
   https://github.com/easymotion/vim-easymotion
