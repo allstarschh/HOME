@@ -113,5 +113,26 @@ STEP "gecko bootstrap"
 STEP "atuin"
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
+# ── Keyboard: caps:escape ─────────────────────────────────────────────────────
+
+STEP "Keyboard: remap Caps Lock to Escape"
+case "${XDG_CURRENT_DESKTOP:-}" in
+  *KDE*)
+    KWRITECONFIG=$(command -v kwriteconfig6 || command -v kwriteconfig5 || true)
+    if [[ -n "$KWRITECONFIG" ]]; then
+      "$KWRITECONFIG" --file kxkbrc --group Layout --key Options caps:escape
+      "$KWRITECONFIG" --file kxkbrc --group Layout --key ResetOldOptions true
+    else
+      echo "WARNING: kwriteconfig not found, skipping"
+    fi
+    ;;
+  *GNOME*)
+    gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+    ;;
+  *)
+    echo "WARNING: unknown desktop '$XDG_CURRENT_DESKTOP', skipping caps:escape config"
+    ;;
+esac
+
 echo
 echo "==> Done. Restart your shell (or source ~/.bashrc) to pick up PATH changes."
