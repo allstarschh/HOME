@@ -26,31 +26,17 @@ sudo apt-get install -y \
   valgrind \
   cargo \
   python3-pip \
-  git-revise
+  git-revise \
+  fd-find \
+  ripgrep
 
-STEP "Rust CLI utilities (apt)"
-sudo apt-get install -y fd-find ripgrep
-
-STEP "Java"
-sudo apt-get install -y openjdk-11-jdk
+#STEP "Java"
+#sudo apt-get install -y openjdk-11-jdk
 
 STEP "fcitx5"
 sudo apt-get install -y fcitx5
 echo "NOTE: run 'im-config' to switch input method to fcitx5"
 echo "NOTE: download fcitx5-table-extra from pkgs.org and copy usr/share files manually"
-
-STEP "Element dependencies"
-sudo apt-get install -y wget apt-transport-https
-
-# ── Element desktop ───────────────────────────────────────────────────────────
-
-STEP "Element desktop"
-sudo wget -O /usr/share/keyrings/riot-im-archive-keyring.gpg \
-  https://packages.riot.im/debian/riot-im-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/riot-im-archive-keyring.gpg] https://packages.riot.im/debian/ default main" \
-  | sudo tee /etc/apt/sources.list.d/riot-im.list
-sudo apt-get update
-sudo apt-get install -y element-desktop
 
 STEP "rr build dependencies"
 sudo apt-get install -y \
@@ -73,17 +59,17 @@ cargo install \
 
 # ── Git repos ─────────────────────────────────────────────────────────────────
 
-STEP "git-cinnabar"
-mkdir -p ~/src
-if [[ ! -d ~/src/git-cinnabar ]]; then
-  git clone git@github.com:glandium/git-cinnabar.git ~/src/git-cinnabar
-fi
+#STEP "git-cinnabar"
+#mkdir -p ~/src
+#if [[ ! -d ~/src/git-cinnabar ]]; then
+  #git clone git@github.com:glandium/git-cinnabar.git ~/src/git-cinnabar
+#fi
 # Ensure git-cinnabar is on PATH (add to ~/.bashrc if not already there)
-if ! grep -q 'git-cinnabar' ~/.bashrc; then
-  echo 'export PATH="$HOME/src/git-cinnabar:$PATH"' >> ~/.bashrc
-fi
-export PATH="$HOME/src/git-cinnabar:$PATH"
-git cinnabar download
+#if ! grep -q 'git-cinnabar' ~/.bashrc; then
+  #echo 'export PATH="$HOME/src/git-cinnabar:$PATH"' >> ~/.bashrc
+#fi
+#export PATH="$HOME/src/git-cinnabar:$PATH"
+#git cinnabar download
 
 STEP "phlay"
 if [[ ! -d ~/src/phlay ]]; then
@@ -115,24 +101,31 @@ curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
 # ── Keyboard: caps:escape ─────────────────────────────────────────────────────
 
-STEP "Keyboard: remap Caps Lock to Escape"
-case "${XDG_CURRENT_DESKTOP:-}" in
-  *KDE*)
-    KWRITECONFIG=$(command -v kwriteconfig6 || command -v kwriteconfig5 || true)
-    if [[ -n "$KWRITECONFIG" ]]; then
-      "$KWRITECONFIG" --file kxkbrc --group Layout --key Options caps:escape
-      "$KWRITECONFIG" --file kxkbrc --group Layout --key ResetOldOptions true
-    else
-      echo "WARNING: kwriteconfig not found, skipping"
-    fi
-    ;;
-  *GNOME*)
-    gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
-    ;;
-  *)
-    echo "WARNING: unknown desktop '$XDG_CURRENT_DESKTOP', skipping caps:escape config"
-    ;;
-esac
+setup_keyboard() {
+  STEP "Keyboard: remap Caps Lock to Escape"
+  case "${XDG_CURRENT_DESKTOP:-}" in
+    *KDE*)
+      KWRITECONFIG=$(command -v kwriteconfig6 || command -v kwriteconfig5 || true)
+      if [[ -n "$KWRITECONFIG" ]]; then
+        "$KWRITECONFIG" --file kxkbrc --group Layout --key Options caps:escape
+        "$KWRITECONFIG" --file kxkbrc --group Layout --key ResetOldOptions true
+      else
+        echo "WARNING: kwriteconfig not found, skipping"
+      fi
+      ;;
+    *GNOME*)
+      gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+      ;;
+    *)
+      echo "WARNING: unknown desktop '$XDG_CURRENT_DESKTOP', skipping caps:escape config"
+      ;;
+  esac
+}
+
+if [[ "${1:-}" == "kb" ]]; then
+  setup_keyboard
+  exit 0
+fi
 
 echo
 echo "==> Done. Restart your shell (or source ~/.bashrc) to pick up PATH changes."
