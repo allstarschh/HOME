@@ -94,9 +94,12 @@ ln -sf ~/src/phlay/phlay ~/bin/phlay
 
 # ── Gecko ─────────────────────────────────────────────────────────────────────
 
+GECKO_SRC_URL="${GECKO_SRC_URL:-https://github.com/mozilla-firefox/firefox.git}"
+# Alternative: GECKO_SRC_URL=hg::https://hg.mozilla.org/mozilla-unified
+
 STEP "gecko-dev clone (this will take a while)"
 if [[ ! -d ~/src/gecko ]]; then
-  git -C ~/src clone hg::https://hg.mozilla.org/mozilla-unified gecko
+  git -C ~/src clone "$GECKO_SRC_URL" gecko
   git -C ~/src/gecko config fetch.prune true
 else
   echo "gecko already cloned, skipping"
