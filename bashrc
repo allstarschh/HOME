@@ -4,7 +4,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.atuin/bin:$PATH
 export PATH=$HOME/.mozbuild/arcanist/bin:$HOME/.mozbuild/moz-phab:$PATH
 
-source $HOME/.cargo/env
 set -o vi
 
 # for running local web server for github pages.
