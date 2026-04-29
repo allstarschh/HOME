@@ -10,9 +10,6 @@ STEP() { echo; echo "==> $*"; }
 STEP "Update apt"
 sudo apt-get update
 
-STEP "Terminator"
-sudo apt-get install -y terminator
-
 STEP "Firefox Nightly (ubuntu-mozilla-daily PPA)"
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
 sudo apt-get update
@@ -20,15 +17,16 @@ sudo apt-get install -y firefox-trunk
 
 STEP "Dev tools"
 sudo apt-get install -y \
-  git mercurial vim vim-scripts gitk \
+  terminator \
+  git mercurial vim vim-scripts vim-gtk3 gitk \
   clang ccache curl \
   php php-curl \
   valgrind \
   cargo \
   python3-pip \
   git-revise \
-  fd-find \
-  ripgrep
+  fd-find ripgrep mold \
+  libxcb-xtest0
 
 #STEP "Java"
 #sudo apt-get install -y openjdk-11-jdk
@@ -47,15 +45,8 @@ sudo apt-get install -y \
 # ── Cargo tools ───────────────────────────────────────────────────────────────
 
 STEP "Cargo tools"
-cargo install \
-  du-dust \
-  gitui \
-  exa \
-  ytop \
-  bottom \
-  procs \
-  git-interactive-rebase-tool \
-  git-delta
+curl https://sh.rustup.rs -sSf | sh
+cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool git-delta cargo-binstall
 
 # ── Git repos ─────────────────────────────────────────────────────────────────
 
