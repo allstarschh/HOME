@@ -113,10 +113,52 @@ setup_keyboard() {
   esac
 }
 
-if [[ "${1:-}" == "kb" ]]; then
-  setup_keyboard
-  exit 0
-fi
+setup_config() {
+  STEP "Copy configuration files"
+
+  local files=(.gitconfig .vimrc .bash_aliases)
+
+  # Copy config files to $HOME
+  for file in "${files[@]}"; do
+    if [[ -f "$file" ]]; then
+      cp "$file" "$HOME/$file"
+      echo "✓ Copied $file to $HOME/"
+    else
+      echo "⚠ $file not found, skipping"
+    fi
+  done
+
+  # Append bashrc content
+  if [[ -f bashrc ]]; then
+    cat bashrc >> "$HOME/.bashrc"
+    echo "✓ Appended bashrc to $HOME/.bashrc"
+  else
+    echo "⚠ bashrc not found, skipping"
+  fi
+
+  # Copy .config files
+  if [[ -d .config ]]; then
+    mkdir -p "$HOME/.config"
+    cp -r .config/* "$HOME/.config/"
+    echo "✓ Copied .config files to $HOME/.config/"
+  else
+    echo "⚠ .config directory not found, skipping"
+  fi
+}
+
+# Command handlers
+# kb:  Configure keyboard (remap Caps Lock to Escape)
+# cfg: Copy configuration files (.gitconfig, .vimrc, .bash_aliases, bashrc, .config) to $HOME
+case "${1:-}" in
+  kb)
+    setup_keyboard
+    exit 0
+    ;;
+  cfg)
+    setup_config
+    exit 0
+    ;;
+esac
 
 echo
 echo "==> Done. Restart your shell (or source ~/.bashrc) to pick up PATH changes."
