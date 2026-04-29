@@ -144,6 +144,14 @@ setup_config() {
   else
     echo "⚠ .config directory not found, skipping"
   fi
+
+  # Copy xorg.conf.d file
+  if [[ -f 10-slimblade.conf ]]; then
+    sudo cp 10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
+    echo "✓ Copied 10-slimblade.conf to /usr/share/X11/xorg.conf.d/"
+  else
+    echo "⚠ 10-slimblade.conf not found, skipping"
+  fi
 }
 
 # Command handlers
