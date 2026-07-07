@@ -1,0 +1,4 @@
+#%PAM-1.0
+# put this in /etc/pam.d/, for KDE Discover, ...etc,
+# services using PolicyKit to authenticate
+@include common-auth

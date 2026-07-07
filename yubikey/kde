@@ -1,0 +1,3 @@
+#%PAM-1.0
+# put this in /etc/pam.d/, for KDE KScreenLocker
+@include common-auth
