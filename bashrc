@@ -1,3 +1,5 @@
+
+force_color_prompt=yes
 export PATH=$HOME/bin:$HOME/src/git-cinnabar:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
