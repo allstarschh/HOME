@@ -1,8 +1,8 @@
 [color]
-	ui = auto
+  ui = auto
 [user]
-	name = Yoshi Cheng-Hao Huang
-	email = allstars.chh@gmail.com
+  name = Yoshi Cheng-Hao Huang
+  email = allstars.chh@gmail.com
 [core]
     pager = delta
     editor = nvim
@@ -17,44 +17,44 @@
     file-style = bold yellow ul
     file-decoration-style = none
 [diff]
-	context = 8
-	wsErrorHighlight = all
+  context = 8
+  wsErrorHighlight = all
 [cinnabar]
-	helper = /home/allstars/src/git-cinnabar/git-cinnabar-helper
-	version-check = 1602160078
+  helper = /home/allstars/src/git-cinnabar/git-cinnabar-helper
+  version-check = 1602160078
 [alias]
-	cp = cherry-pick
-	cpcnt = cherry-pick --continue
-	dc = diff --cached
-	cm = commit
-	br = branch
-	bl = blame
-	co = checkout
-	st = status
-	cma = commit --amend
-	d = diff
-	au = add -u
-	ap = add -p
-	lg = log
-	ri = rebase -i
-	cb = checkout -b
-	so = show
+  cp = cherry-pick
+  cpcnt = cherry-pick --continue
+  dc = diff --cached
+  cm = commit
+  br = branch
+  bl = blame
+  co = checkout
+  st = status
+  cma = commit --amend
+  d = diff
+  au = add -u
+  ap = add -p
+  lg = log
+  ri = rebase -i
+  cb = checkout -b
+  so = show
   so1= show HEAD~1
   so2= show HEAD~2
   so3= show HEAD~3
-	ss = show --stat
+  ss = show --stat
   ft = fetch origin main:main
-	pl = pull origin main
+  pl = pull origin main
   ps = push
   rb = rebase main
-	rcnt = rebase --continue
-	rcen = rebase central
-	rv = revise -i
-	cut = revise -c
+  rcnt = rebase --continue
+  rcen = rebase central
+  rv = revise -i
+  cut = revise -c
   amcnt = am --continue
 [cola]
-	spellcheck = false
+  spellcheck = false
 [sequence]
-	editor = interactive-rebase-tool
+  editor = interactive-rebase-tool
 [color "diff"]
-	whitespace = red reverse
+  whitespace = red reverse
