@@ -42,16 +42,16 @@
   so1= show HEAD~1
   so2= show HEAD~2
   so3= show HEAD~3
-
 	ss = show --stat
-  ft = fetch origin main
-	pl = pull origin mainb
+  ft = fetch origin main:main
+	pl = pull origin main
+  ps = push
   rb = rebase main
 	rcnt = rebase --continue
 	rcen = rebase central
 	rv = revise -i
 	cut = revise -c
-    amcnt = am --continue
+  amcnt = am --continue
 [cola]
 	spellcheck = false
 [sequence]
