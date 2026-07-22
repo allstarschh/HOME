@@ -4,14 +4,18 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias fd=fdfind
+alias cld=claude
+alias nv=nvim
+alias gu=gitui
 
 # mach cmds
 alias mb="./mach build"
 alias mt="./mach try fuzzy"
 alias mf="./mach format"
 alias mfh="./mach format -r HEAD"
-alias mfh1="./mach format -f HEAD~1"
-alias mfh2="./mach format -f HEAD~2"
+alias mf1="./mach format -r HEAD~1"
+alias mf2="./mach format -r HEAD~2"
+alias mln="./mach lint --fix"
 alias mr="./mach run"
 alias mg="./mach gtest"
 alias mx="./mach xpcshell-test"
@@ -26,14 +30,15 @@ alias mwh="./mach wpt --headless"
 alias mrh="./mach reftest --headless"
 alias mjh="./mach jstestbrowser --headless --filter"
 
+alias gau="git au"
+alias gb="git br"
 alias gd="git d"
 alias gds="git ds"
-alias gau="git au"
 alias gcm="git cm"
 alias gl="git lg"
-alias gcp="git cp"
 alias gcb="git cb"
-alias gb="git br"
+alias gco="git co"
+alias gcp="git cp"
 alias gso="git so"
 alias gst="git st"
 alias grv="git rv"

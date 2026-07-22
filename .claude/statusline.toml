@@ -1,0 +1,17 @@
+# foxtail status line — blue & white palette
+# Note: use RGB arrays or "hsl(...)" strings. Hex strings are matched to the
+# Hsl enum variant first (untagged), so "#rrggbb" does NOT work currently.
+
+enable_background = true
+
+# Show: model, context size, working dir, cost, cache, lines added/removed
+format = "{head} | {model} | {ctx} | {cwdcompact} | {cost} | {cache} | {claudedelta} | {tail}"
+
+[colors]
+background = [30, 95, 168]     # blue bar
+model      = [255, 255, 255]   # white
+cwd        = [255, 255, 255]
+cost       = [255, 209, 102]   # gold — highlight
+cache      = [220, 233, 247]   # light blue-white
+delta      = [130, 224, 130]   # bright green — highlight lines added/removed
+separator  = [158, 197, 236]   # light blue divider

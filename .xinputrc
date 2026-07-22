@@ -1,0 +1,21 @@
+# im-config(8) generated on Mon, 20 Jul 2026 13:40:44 +0800
+# --- customized: use the Wayland text-input frontend for GTK/Qt ---
+# Follows the fcitx5 wiki "Best Setup" for KDE Plasma Wayland:
+#   https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
+#   - keep XMODIFIERS=@im=fcitx (for XWayland/X11 apps via XIM)
+#   - do NOT set GTK_IM_MODULE / QT_IM_MODULE / SDL_IM_MODULE
+#     so GTK4 and Qt6 apps use the native Wayland text-input-v3 protocol.
+# (The im-config signature line was removed on purpose so im-config treats
+#  this as a custom config and never regenerates it.)
+
+# Start the fcitx5 daemon + run im-config's phase-1 setup (which sets the
+# module vars to "fcitx"); we override that immediately below.
+run_im fcitx5
+
+# im-config's launch hook always runs `export GTK_IM_MODULE` etc. afterwards.
+# Unsetting here means dash exports nothing, so the vars are truly absent.
+unset GTK_IM_MODULE
+unset QT_IM_MODULE
+unset SDL_IM_MODULE
+unset CLUTTER_IM_MODULE
+XMODIFIERS=@im=fcitx

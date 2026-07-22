@@ -5,7 +5,7 @@
 	email = allstars.chh@gmail.com
 [core]
     pager = delta
-    editor = vim
+    editor = nvim
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -26,12 +26,12 @@
 	cp = cherry-pick
 	cpcnt = cherry-pick --continue
 	dc = diff --cached
-	ci = commit
+	cm = commit
 	br = branch
 	bl = blame
 	co = checkout
 	st = status
-	cia = commit --amend
+	cma = commit --amend
 	d = diff
 	au = add -u
 	ap = add -p
@@ -39,9 +39,14 @@
 	ri = rebase -i
 	cb = checkout -b
 	so = show
+  so1= show HEAD~1
+  so2= show HEAD~2
+  so3= show HEAD~3
+
 	ss = show --stat
-	fo = fetch origin bookmarks/central:central
-	po = pull origin bookmarks/central
+  ft = fetch origin main
+	pl = pull origin mainb
+  rb = rebase main
 	rcnt = rebase --continue
 	rcen = rebase central
 	rv = revise -i

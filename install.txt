@@ -35,7 +35,7 @@ cargo install du-dust gitui exa ytop bottom procs git-interactive-rebase-tool gi
 sudo apt install openjdk-11-jdk 
 
 # for fcitx
-sudo apt-get install fcitx5 
+sudo apt-get install fcitx5 fcitx5-table-extra fcitx5-frontend-qt5 kde-config-fcitx5
 # im-config to switch input method to fcitx5
 # download https://pkgs.org/download/fcitx5-table-extra, and cp usr/share files
 
