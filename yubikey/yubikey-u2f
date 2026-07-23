@@ -1,8 +1,8 @@
-# put this in /usr/share/pam-configs, and run ./sudo pam-auth-update
 Name: YubiKey U2F passwordless auth
 Default: yes
 Priority: 900
 Auth-Type: Primary
 Auth:
-        sufficient      pam_u2f.so cue
-EOF
+	[success=end default=ignore]	pam_u2f.so cue
+Auth-Initial:
+	[success=end default=ignore]	pam_u2f.so cue
