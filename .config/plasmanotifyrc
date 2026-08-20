@@ -1,2 +1,8 @@
+[Applications][kitty]
+Seen=true
+
+[Applications][org.gnome.DejaDup]
+Seen=true
+
 [Notifications]
 PopupPosition=TopRight

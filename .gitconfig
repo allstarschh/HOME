@@ -56,5 +56,11 @@
   spellcheck = false
 [sequence]
   editor = interactive-rebase-tool
+[color "branch"]
+  current = green bold ul
+  local = yellow
+  remote = red
 [color "diff"]
   whitespace = red reverse
+[index]
+	version = 4
