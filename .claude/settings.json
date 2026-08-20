@@ -1,8 +1,20 @@
 {
-  "theme": "dark",
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/allstars/.claude/bin/claude-kde-notify-raise.sh"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "/home/allstars/.claude/bin/foxtail --color always",
     "padding": 0
-  }
+  },
+  "theme": "dark"
 }
