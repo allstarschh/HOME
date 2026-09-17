@@ -1,0 +1,19 @@
+Note for ~/.config/plasmanotifyrc
+=================================
+
+After hand-editing plasmanotifyrc, run:
+
+    systemctl --user restart plasma-plasmashell.service
+
+plasmashell watches its config through KConfigWatcher, which reloads only on the
+org.kde.kconfig.notify D-Bus signal - not on filesystem changes. A plain text
+edit sends no such signal, so the new value is ignored until plasmashell is
+restarted. Changing the setting through System Settings instead writes the file
+*and* emits the signal, so it applies live.
+
+This note lives outside plasmanotifyrc because KConfig's INI backend skips '#'
+lines when parsing and rewrites the file from its in-memory entry map, so any
+comment there is dropped the next time plasmashell saves (which happens whenever
+a new app sends its first notification and gains a Seen=true entry).
+
+Current setting: [Notifications] PopupPosition=TopRight
