@@ -11,6 +11,12 @@ alias gu=gitui
 # mach cmds
 alias mb="./mach build"
 alias mt="./mach try fuzzy"
+# Usual linux64 set: spidermonkey-sm builds + mochitest-plain/wpt/xpcshell on the
+# plain, asan and tsan linux test platforms (wayland and shippable excluded).
+# Test platforms are named linux2404-64*, so they don't match a 'linux64 query.
+alias mtl="./mach try fuzzy -q \"'linux64 'spidermonkey-sm\" -q \"'linux 'mochitest-plain !wayland !shippable\" -q \"'linux 'web-platform-tests !wayland !shippable\" -q \"'linux 'xpcshell !wayland !shippable\""
+# Same set, via the preset in ~/.mozbuild/try_presets.yml (this machine only).
+alias mtpl="./mach try --preset linux64"
 alias mf="./mach format"
 alias mfh="./mach format -r HEAD"
 alias mf1="./mach format -r HEAD~1"

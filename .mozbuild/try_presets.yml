@@ -1,0 +1,7 @@
+linux64:
+  query:
+  - "'linux64 'spidermonkey-sm"
+  - "'linux 'mochitest-plain !wayland !shippable"
+  - "'linux 'web-platform-tests !wayland !shippable"
+  - "'linux 'xpcshell !wayland !shippable"
+  selector: fuzzy
