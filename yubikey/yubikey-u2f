@@ -3,6 +3,6 @@ Default: yes
 Priority: 900
 Auth-Type: Primary
 Auth:
-	[success=end default=ignore]	pam_u2f.so cue
+	[success=end default=ignore]	pam_u2f.so cue authfile=/etc/Yubico/u2f_keys
 Auth-Initial:
-	[success=end default=ignore]	pam_u2f.so cue
+	[success=end default=ignore]	pam_u2f.so cue authfile=/etc/Yubico/u2f_keys

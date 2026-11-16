@@ -7,6 +7,12 @@
 #   yubikey-u2f -> /usr/share/pam-configs/   then run: pam-auth-update
 #   kde         -> /etc/pam.d/kde            (KDE KScreenLocker)
 #   polkit-1    -> /etc/pam.d/polkit-1       (KDE Discover and other PolicyKit services)
+#   polkit-agent-helper-u2f.conf
+#               -> /etc/systemd/system/polkit-agent-helper@.service.d/u2f.conf
+#                  (lets the sandboxed polkit helper reach the YubiKey)
+#   ~/.config/Yubico/u2f_keys -> /etc/Yubico/u2f_keys
+#                  (pam_u2f reads authfile=/etc/Yubico/u2f_keys, because the
+#                   polkit helper runs with ProtectHome=yes and can't see ~)
 #
 # WARNING: a broken PAM config can lock you out of sudo and login. Before
 # running this, open a SEPARATE root shell and keep it open until you have
@@ -40,12 +46,31 @@ install_file() {
 		cp -a "${dest}" "${bak}"
 		echo "  backed up existing file -> ${bak}"
 	fi
-	install -o root -g root -m 0644 "${SCRIPT_DIR}/${src}" "${dest}"
+	# Relative sources are taken from this directory; absolute ones as-is.
+	[[ "${src}" == /* ]] || src="${SCRIPT_DIR}/${src}"
+	install -o root -g root -m 0644 "${src}" "${dest}"
 }
 
 install_file yubikey-u2f /usr/share/pam-configs/yubikey-u2f
 install_file kde         /etc/pam.d/kde
 install_file polkit-1    /etc/pam.d/polkit-1
+
+mkdir -p /etc/systemd/system/polkit-agent-helper@.service.d
+install_file polkit-agent-helper-u2f.conf \
+	/etc/systemd/system/polkit-agent-helper@.service.d/u2f.conf
+systemctl daemon-reload
+
+# Sync the key mapping from the invoking user's home into /etc. Register keys
+# with ./register_keys.sh (it can run this script for you afterwards).
+USER_HOME="$(getent passwd "${SUDO_USER:-root}" | cut -d: -f6)"
+KEYS_SRC="${USER_HOME}/.config/Yubico/u2f_keys"
+if [[ -f "${KEYS_SRC}" ]]; then
+	mkdir -p /etc/Yubico
+	install_file "${KEYS_SRC}" /etc/Yubico/u2f_keys
+else
+	echo "WARNING: ${KEYS_SRC} not found; /etc/Yubico/u2f_keys not updated." >&2
+	echo "  Without it, the YubiKey won't work anywhere (pam_u2f uses authfile=)." >&2
+fi
 
 echo
 echo "Regenerating /etc/pam.d/common-* with pam-auth-update..."
@@ -56,3 +81,4 @@ echo
 echo "Done. Now TEST in a separate terminal, leaving your root shell open:"
 echo "  sudo -k; sudo ls   # YubiKey unplugged -> should prompt for password"
 echo "  sudo -k; sudo ls   # YubiKey plugged in -> should authenticate on touch"
+echo "  pkexec true        # YubiKey plugged in -> polkit dialog accepts a touch"
